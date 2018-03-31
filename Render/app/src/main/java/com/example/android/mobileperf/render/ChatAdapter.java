@@ -17,7 +17,6 @@
 package com.example.android.mobileperf.render;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,8 +75,10 @@ public class ChatAdapter extends ArrayAdapter<Chat> {
         if (chat.getAuthor().getAvatarId() != 0) {
             Picasso.with(getContext()).load(chat.getAuthor().getAvatarId()).into(
                     chat_author_avatar);
+            chat_author_avatar.setBackgroundColor(/*chat.getAuthor().getColor()*/ parent.getResources().getColor(android.R.color.transparent));
+        }else{
+            chat_author_avatar.setBackgroundColor(chat.getAuthor().getColor());
         }
-        chat_author_avatar.setBackgroundColor(chat.getAuthor().getColor());
 
         return view;
     }

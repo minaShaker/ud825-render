@@ -28,11 +28,14 @@ public class ChatumLatinumActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chatum_latinum);
+        getWindow().setBackgroundDrawable(null);
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.activity_chatum_latinum_container, new ChatsFragment())
                     .commit();
+
         }
     }
+
 }
